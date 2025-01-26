@@ -1,3 +1,6 @@
+import axios from "axios";
+import { Post } from "../models/post";
+
 export async function fetchPosts(): Promise<Post[]> {
     try {
         const response = await axios.get<Post[]>("https://jsonplaceholder.typicode.com/posts");

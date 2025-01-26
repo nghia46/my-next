@@ -1,5 +1,9 @@
+'use client'; 
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import { queryClient } from "@/lib/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools/production";
 
 export default function RootLayout({
   children,
@@ -9,8 +13,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
+        <QueryClientProvider client={queryClient}>
+          <Navbar />
+          {children}
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Product } from "../models/product";
 
 export async function fetchProducts(): Promise<Product[]> {
   try {
@@ -12,7 +13,7 @@ export async function fetchProducts(): Promise<Product[]> {
   }
 }
 
-export async function fetchProductById(id: number) {
+export async function fetchProductById(id: number): Promise<Product> {
   try {
     const response = await axios.get<Product>(
       `https://fakestoreapi.com/products/${id}`
@@ -20,6 +21,6 @@ export async function fetchProductById(id: number) {
     return response.data;
   } catch (error) {
     console.error(error);
-    return [];
+    return {} as Product;
   }
 }
