@@ -1,0 +1,37 @@
+// Button.module.scss
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; // Màu nền mặc định
+    color: white; // Màu chữ mặc định
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  
+    // Hiệu ứng khi hover
+    &:hover {
+      background-color: darken(#007bff, 10%);
+    }
+  
+    // Hiệu ứng khi active (nhấn chuột)
+    &:active {
+      transform: scale(0.95);
+    }
+  
+    // Khi button bị disabled
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  
+    // Tùy chỉnh thêm class nếu có
+    &.custom-class {
+      background-color: #28a745; // Màu nền khác
+      &:hover {
+        background-color: darken(#28a745, 10%);
+      }
+    }
+  }

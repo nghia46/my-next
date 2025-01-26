@@ -1,0 +1,57 @@
+@import "../styles/variables";
+
+.card {
+  max-width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgb(44, 44, 44);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card .content {
+  padding: 16px;
+}
+
+.card .title {
+  display: -webkit-box; /* Thiết lập để line-clamp hoạt động */
+  -webkit-line-clamp: 1; /* Giới hạn title ở 2 dòng */
+  line-clamp: 1; /* Giới hạn title ở 2 dòng */
+  -webkit-box-orient: vertical; /* Thiết lập theo chiều dọc */
+  overflow: hidden; /* Ẩn phần văn bản vượt quá */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card .description {
+  display: -webkit-box; /* Thiết lập để line-clamp hoạt động */
+  -webkit-line-clamp: 2; /* Giới hạn title ở 2 dòng */
+  line-clamp: 2; /* Giới hạn title ở 2 dòng */
+  -webkit-box-orient: vertical; /* Thiết lập theo chiều dọc */
+  overflow: hidden; /* Ẩn phần văn bản vượt quá */
+  font-size: 1rem;
+  color: rgb(200, 200, 200);
+  margin-bottom: 16px;
+}
+
+.card .button {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: $primary-color;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}
